@@ -12,7 +12,7 @@ public class App {
 	
     public static void main( String[] args ){
 
-    	System.out.println(" SSN 1: " + SSN.isValidSSN("1234567890") );
+    	System.out.println(" SSN 1: " + SSN.isValidSSN("123456789") );
     	
     	
     }

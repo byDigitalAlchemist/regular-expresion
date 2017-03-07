@@ -32,7 +32,7 @@ public class SSN {
 	/**
 	 * only and only 333-333-3333 or 3333333333 valid
 	 */
-	public static final String fourth_pattern = "^\\d{3}(-\\d{3}-|\\d{3})\\d{4}$";
+	public static final String fourth_pattern = "^(\\d{3}-\\d{3}-\\d{4})|(\\d{10})$";
 	
 	
 	public static boolean isValidSSN(String userText){
