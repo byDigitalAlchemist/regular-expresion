@@ -1,5 +1,7 @@
 package com.dc.engineering.re.solutions;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A Social Security number CANNOT : 
@@ -14,8 +16,19 @@ package com.dc.engineering.re.solutions;
  */
 public class SSN {
 	
+	public static final String first_pattern = "\\d{3}-\\d{3}-\\d{4}";
+	
+	public static final String second_pattern = "^\\d{3}-\\d{3}-\\d{4}$";
+	
+	public static final String third_pattern = "^\\d{3}-\\d{3}-\\d{4}$";
+	
+	
 	public static boolean isValidSSN(String userText){
+		Pattern p = Pattern.compile(second_pattern);
+		Matcher matcher = p.matcher(userText);
 		
+		if(matcher.find())
+			return true;
 		return false;
 	}
 
