@@ -35,6 +35,12 @@ public class SSN {
 	public static final String fourth_pattern = "^(\\d{3}-\\d{3}-\\d{4})|(\\d{10})$";
 	
 	
+	/**
+	 * should not start with 666
+	 */
+	public static final String fifth_pattern = "^(\\d{3}-\\d{3}-\\d{4})|(\\d{10})$";
+	
+	
 	public static boolean isValidSSN(String userText){
 		Pattern p = Pattern.compile(fourth_pattern);
 		Matcher matcher = p.matcher(userText);
