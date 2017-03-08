@@ -38,11 +38,11 @@ public class SSN {
 	/**
 	 * should not start with 666
 	 */
-	public static final String fifth_pattern = "^(\\d{3}-\\d{3}-\\d{4})|(\\d{10})$";
+	public static final String fifth_pattern = "^[01235789][01235789][01235789]((-\\d{3}-\\d{4})|(\\d{7}))$";
 	
 	
 	public static boolean isValidSSN(String userText){
-		Pattern p = Pattern.compile(fourth_pattern);
+		Pattern p = Pattern.compile(fifth_pattern);
 		Matcher matcher = p.matcher(userText);
 		
 		if(matcher.find())
