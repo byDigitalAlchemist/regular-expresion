@@ -17,11 +17,20 @@ public class SSNValidatorTest {
 		assertTrue(SSN.isValidSSN("1234567890"));
 		assertTrue(SSN.isValidSSN("123-456-7890"));
 		
-		assertFalse(SSN.isValidSSN("6664567890"));
-		assertFalse(SSN.isValidSSN("666-456-7890"));
+		/*
+			assertFalse(SSN.isValidSSN("6664567890"));
+			assertFalse(SSN.isValidSSN("666-456-7890"));
+			assertTrue(SSN.isValidSSN("166-456-7890"));
+			assertTrue(SSN.isValidSSN("616-456-7890"));
+			assertTrue(SSN.isValidSSN("166-456-7890"));
+		*/
 		
-		assertTrue(SSN.isValidSSN("166-456-7890"));
-	
+		assertFalse(SSN.isValidSSN("000-000-7890"));
+		assertFalse(SSN.isValidSSN("000-456-7890"));
+		assertFalse(SSN.isValidSSN("123-000-7890"));
+		assertFalse(SSN.isValidSSN("123-456-0000"));
+		
+		
 	}
 
 }

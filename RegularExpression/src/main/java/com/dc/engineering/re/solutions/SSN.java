@@ -34,15 +34,18 @@ public class SSN {
 	 */
 	public static final String fourth_pattern = "^(\\d{3}-\\d{3}-\\d{4})|(\\d{10})$";
 	
-	
 	/**
-	 * should not start with 666
+	 * should not start with 666 but it is valid 166,616,661
 	 */
 	public static final String fifth_pattern = "^[01235789][01235789][01235789]((-\\d{3}-\\d{4})|(\\d{7}))$";
 	
+	/**
+	 * Contain all zeroes in any specific group (ie 000-##-####, ###-00-####, or ###-##-0000)
+	 */
+	public static final String sixth_pattern = "^((?!0{3})\\d{3}-(?!0{3})\\d{3}-(?!0{4})\\d{4})|(\\d{10})$";
 	
 	public static boolean isValidSSN(String userText){
-		Pattern p = Pattern.compile(fifth_pattern);
+		Pattern p = Pattern.compile(sixth_pattern);
 		Matcher matcher = p.matcher(userText);
 		
 		if(matcher.find())
