@@ -43,6 +43,8 @@ public class SSN {
 	 * http://www.regextester.com/1926
 	 * Contain all zeroes in any specific group (ie 000-##-####, ###-00-####, or ###-##-0000)
 	 */
+	//public static final String sixth_pattern = "^((?!0{3})\\d{3}-(?!0{3})\\d{3}-(?!0{4})\\d{4})|((\\d{6}(?!0{4})\\d{4})|(\\d{7}(?!0{3})\\d{3}))$";
+	
 	public static final String sixth_pattern = "^((?!0{3})\\d{3}-(?!0{3})\\d{3}-(?!0{4})\\d{4})|((\\d{6}(?!0{4})\\d{4})|(\\d{7}(?!0{3})\\d{3}))$";
 	
 	
