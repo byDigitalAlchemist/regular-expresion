@@ -9,31 +9,37 @@ import com.dc.engineering.re.solutions.SSN;
 public class SSNValidatorTest {
 
 	@Test
-	public void validate(){
-		
-		assertFalse(SSN.isValidSSN("123456789"));
+	public void validateDashSSN(){
 		assertFalse(SSN.isValidSSN("123-456-789"));
-		
 		assertTrue(SSN.isValidSSN("1234567890"));
 		assertTrue(SSN.isValidSSN("123-456-7890"));
-		
-		/*
-			assertFalse(SSN.isValidSSN("6664567890"));
-			assertFalse(SSN.isValidSSN("666-456-7890"));
-			assertTrue(SSN.isValidSSN("166-456-7890"));
-			assertTrue(SSN.isValidSSN("616-456-7890"));
-			assertTrue(SSN.isValidSSN("166-456-7890"));
-		*/
-		
-		assertFalse(SSN.isValidSSN("000-000-7890"));
-		assertFalse(SSN.isValidSSN("000-456-7890"));
-		assertFalse(SSN.isValidSSN("123-000-7890"));
-		assertFalse(SSN.isValidSSN("123-456-0000"));
 
-		assertTrue(SSN.isValidSSN("120-003-7890"));
-		assertTrue(SSN.isValidSSN("123-300-0890"));
-		assertTrue(SSN.isValidSSN("123-345-0006"));
-		assertTrue(SSN.isValidSSN("123-345-6000"));
+		/*
+		assertFalse(SSN.isValidSSN("6664567890"));
+		assertFalse(SSN.isValidSSN("666-456-7890"));
+		assertTrue(SSN.isValidSSN("166-456-7890"));
+		assertTrue(SSN.isValidSSN("616-456-7890"));
+		assertTrue(SSN.isValidSSN("166-456-7890"));
+	*/
+	
+	assertFalse(SSN.isValidSSN("000-000-7890"));
+	assertFalse(SSN.isValidSSN("000-456-7890"));
+	assertFalse(SSN.isValidSSN("123-000-7890"));
+	assertFalse(SSN.isValidSSN("123-456-0000"));
+
+	assertTrue(SSN.isValidSSN("120-003-7890"));
+	assertTrue(SSN.isValidSSN("123-300-0890"));
+	assertTrue(SSN.isValidSSN("123-345-0006"));
+	assertTrue(SSN.isValidSSN("123-345-6000"));
+
+	}
+		
+	
+	@Test
+	public void validateSSNWithoutDash(){
+		
+		assertFalse(SSN.isValidSSN("123456789"));
+		
 
 		assertFalse(SSN.isValidSSN("1234560000"));
 		assertFalse(SSN.isValidSSN("1234567000"));
