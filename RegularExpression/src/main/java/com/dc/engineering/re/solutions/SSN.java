@@ -46,7 +46,9 @@ public class SSN {
 	//public static final String sixth_pattern = "^((?!0{3})\\d{3}-(?!0{3})\\d{3}-(?!0{4})\\d{4})|((\\d{6}(?!0{4})\\d{4})|(\\d{7}(?!0{3})\\d{3}))$";
 	
 	//public static final String sixth_pattern = "^((?!0{3})\\d{3}\\d{7})$";
-	public static final String sixth_pattern = "^(\\d{3}(?!0{3})\\d{3}\\d{4})$";
+	//public static final String sixth_pattern = "^(\\d{3}(?!0{3})\\d{7})$";
+	//public static final String sixth_pattern = "^(\\d{6}(?!0{4})\\d{4})$";
+	//public static final String sixth_pattern = "^(\\d{3}(?!0{3})\\d{3}\\d{4})|(\\d{6}(?!0{4})\\d{4})$";
 	
 	
 	public static boolean isValidSSN(String userText){
