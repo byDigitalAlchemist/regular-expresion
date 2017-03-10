@@ -45,14 +45,14 @@ public class SSN {
 	 */
 	//public static final String sixth_pattern = "^((?!0{3})\\d{3}-(?!0{3})\\d{3}-(?!0{4})\\d{4})|((\\d{6}(?!0{4})\\d{4})|(\\d{7}(?!0{3})\\d{3}))$";
 	
-	//public static final String sixth_pattern = "^((?!0{3})\\d{3}\\d{7})$";
-	//public static final String sixth_pattern = "^(\\d{3}(?!0{3})\\d{7})$";
-	//public static final String sixth_pattern = "^(\\d{6}(?!0{4})\\d{4})$";
+	public static final String sixth_pattern_f = "^((?!0{3})\\d{10})$";
+	//public static final String sixth_pattern_m = "^(\\d{3}(?!0{3})\\d{7})$";
+	//public static final String sixth_pattern_l = "^(\\d{6}(?!0{4})\\d{4})$";
 	//public static final String sixth_pattern = "^(\\d{3}(?!0{3})\\d{3}\\d{4})|(\\d{6}(?!0{4})\\d{4})$";
 	
 	
 	public static boolean isValidSSN(String userText){
-		Pattern p = Pattern.compile(sixth_pattern);
+		Pattern p = Pattern.compile(sixth_pattern_f);
 		Matcher matcher = p.matcher(userText);
 		
 		if(matcher.find())
