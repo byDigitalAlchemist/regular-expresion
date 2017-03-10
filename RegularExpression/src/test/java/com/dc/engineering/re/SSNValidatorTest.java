@@ -41,12 +41,20 @@ public class SSNValidatorTest {
 	@Test
 	public void validateSSNWithoutDash(){
 		
+		assertFalse(SSN.isValidSSN("1110007890"));
+		assertFalse(SSN.isValidSSN("1110000890"));
+		assertFalse(SSN.isValidSSN("1100000890"));
+		assertTrue(SSN.isValidSSN("1111000890"));
+	
+		/*
 		assertFalse(SSN.isValidSSN("123456789"));
 		assertFalse(SSN.isValidSSN("0004567890"));
 		assertFalse(SSN.isValidSSN("0000007890"));
 		assertTrue(SSN.isValidSSN("1000107890"));
 		assertTrue(SSN.isValidSSN("1100017890"));
-		assertFalse(SSN.isValidSSN("1110007890"));
+	
+		 */
+		
 		/*
   		assertFalse(SSN.isValidSSN("1234560000"));
 		assertFalse(SSN.isValidSSN("1234567000"));
