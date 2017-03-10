@@ -48,11 +48,12 @@ public class SSN {
 	public static final String sixth_pattern_f = "^((?!0{3})\\d{10})$";
 	//public static final String sixth_pattern_m = "^(\\d{3}(?!0{3})\\d{7})$";
 	//public static final String sixth_pattern_l = "^(\\d{6}(?!0{4})\\d{4})$";
-	//public static final String sixth_pattern = "^(\\d{3}(?!0{3})\\d{3}\\d{4})|(\\d{6}(?!0{4})\\d{4})$";
 	
+	
+	public static final String sixth_pattern = "^(?!219-09-9999|078-05-1120)(?!666|000|9\\d{2})\\d{3}[- ]?(?!00)\\d{2}[- ]?(?!0{4})\\d{4}$";
 	
 	public static boolean isValidSSN(String userText){
-		Pattern p = Pattern.compile(sixth_pattern_f);
+		Pattern p = Pattern.compile(sixth_pattern);
 		Matcher matcher = p.matcher(userText);
 		
 		if(matcher.find())

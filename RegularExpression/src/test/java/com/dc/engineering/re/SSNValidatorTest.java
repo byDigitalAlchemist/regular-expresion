@@ -10,30 +10,27 @@ import com.dc.engineering.re.solutions.SSN;
 
 public class SSNValidatorTest {
 
-	@Ignore
 	@Test
 	public void validateDashSSN(){
 		assertFalse(SSN.isValidSSN("123-456-789"));
-		assertTrue(SSN.isValidSSN("1234567890"));
-		assertTrue(SSN.isValidSSN("123-456-7890"));
+		assertTrue(SSN.isValidSSN("123456789"));
+		assertTrue(SSN.isValidSSN("123-45-6789"));
 
-		/*
-		assertFalse(SSN.isValidSSN("6664567890"));
-		assertFalse(SSN.isValidSSN("666-456-7890"));
-		assertTrue(SSN.isValidSSN("166-456-7890"));
-		assertTrue(SSN.isValidSSN("616-456-7890"));
-		assertTrue(SSN.isValidSSN("166-456-7890"));
-	*/
+		assertFalse(SSN.isValidSSN("666456789"));
+		assertFalse(SSN.isValidSSN("666-45-7890"));
+		assertTrue(SSN.isValidSSN("166-45-7890"));
+		assertTrue(SSN.isValidSSN("616-45-7890"));
+		assertTrue(SSN.isValidSSN("166-46-7890"));
 	
-	assertFalse(SSN.isValidSSN("000-000-7890"));
-	assertFalse(SSN.isValidSSN("000-456-7890"));
-	assertFalse(SSN.isValidSSN("123-000-7890"));
-	assertFalse(SSN.isValidSSN("123-456-0000"));
+	assertFalse(SSN.isValidSSN("000-00-7890"));
+	assertFalse(SSN.isValidSSN("000-45-7890"));
+	assertFalse(SSN.isValidSSN("123-00-7890"));
+	assertFalse(SSN.isValidSSN("123-45-0000"));
 
-	assertTrue(SSN.isValidSSN("120-003-7890"));
-	assertTrue(SSN.isValidSSN("123-300-0890"));
-	assertTrue(SSN.isValidSSN("123-345-0006"));
-	assertTrue(SSN.isValidSSN("123-345-6000"));
+	assertTrue(SSN.isValidSSN("120-03-7890"));
+	assertTrue(SSN.isValidSSN("123-30-0890"));
+	assertTrue(SSN.isValidSSN("123-34-0006"));
+	assertTrue(SSN.isValidSSN("123-34-6000"));
 
 	}
 		
@@ -42,23 +39,26 @@ public class SSNValidatorTest {
 	public void validateSSNWithoutDash(){
 		
 		/** Middle **/
-//		assertFalse(SSN.isValidSSN("1110007890"));
-//		assertFalse(SSN.isValidSSN("1110000890"));
-//		assertFalse(SSN.isValidSSN("1100000890"));
-//		assertTrue(SSN.isValidSSN("1111000890"));
+		assertFalse(SSN.isValidSSN("111000789"));
+		assertFalse(SSN.isValidSSN("111000089"));
+		assertFalse(SSN.isValidSSN("110000089"));
+		assertTrue(SSN.isValidSSN("111100089"));
 		
 		/** First **/
-		assertFalse(SSN.isValidSSN("123456789"));
-		assertFalse(SSN.isValidSSN("0004567890"));
-		assertFalse(SSN.isValidSSN("0000007890"));
-		assertTrue(SSN.isValidSSN("1000107890"));
-		assertTrue(SSN.isValidSSN("1100017890"));
-		
+		assertTrue(SSN.isValidSSN("123456789"));
+		assertFalse(SSN.isValidSSN("000456789"));
+		assertFalse(SSN.isValidSSN("000000789"));
+		assertTrue(SSN.isValidSSN("100010789"));
+		assertFalse(SSN.isValidSSN("110001789"));
+		assertTrue(SSN.isValidSSN("111100789"));
+		assertFalse(SSN.isValidSSN("111010000"));
+		assertFalse(SSN.isValidSSN("111100000"));
+		assertFalse(SSN.isValidSSN("000056789"));
 		/** Last **/
-//		assertFalse(SSN.isValidSSN("1234560000"));
-//		assertFalse(SSN.isValidSSN("1234500000"));
-//		assertTrue(SSN.isValidSSN("1234500001"));
-//		assertFalse(SSN.isValidSSN("0000000000"));
+		assertFalse(SSN.isValidSSN("123450000"));
+		assertFalse(SSN.isValidSSN("123400000"));
+		assertTrue(SSN.isValidSSN("123400001"));
+		assertFalse(SSN.isValidSSN("000000000"));
 		
 	}
 
