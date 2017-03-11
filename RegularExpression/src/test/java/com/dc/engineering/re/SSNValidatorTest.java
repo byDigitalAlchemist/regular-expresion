@@ -10,7 +10,6 @@ import com.dc.engineering.re.solutions.SSN;
 
 public class SSNValidatorTest {
 
-	@Ignore
 	@Test
 	public void validateDashSSN() {
 		assertFalse(SSN.isValidSSN("123-456-789"));
@@ -35,7 +34,6 @@ public class SSNValidatorTest {
 
 	}
 
-	@Ignore
 	@Test
 	public void validateSSNWithoutDash() {
 
