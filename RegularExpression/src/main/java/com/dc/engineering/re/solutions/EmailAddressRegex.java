@@ -5,6 +5,9 @@ import java.util.regex.Pattern;
 
 public class EmailAddressRegex {
 	
+	
+	int extensionMaxLength = 3;
+	
 	/**
 	 * @  is requried
 	 * 
@@ -13,23 +16,29 @@ public class EmailAddressRegex {
 	 * 	Match 2-4 letters a-z or Caps	
 	 */
 	
-	private String pattern = "^\\w@\\w.\\w{2,4}$";
+	private String extensionPattern="^\\.([a-zA-Z]){1,3}$";
+	private String pattern;
 	
 	public EmailAddressRegex(){
-		this.pattern = "";
+		//this("^\\w*@\\w*.\\w(?!_){1,3}$");
+		this.pattern = extensionPattern;
 	}
 	
 	public EmailAddressRegex(String pattern){
 		this.pattern = pattern;
 	}
 	
-	public boolean isValidEmailAddress(String email){
-		Pattern p = Pattern.compile(pattern);
+	public boolean isValidEmailExtension(String email){
+		Pattern p = Pattern.compile(extensionPattern);
 		Matcher matcher = p.matcher(email);
 		
-		
-		if(matcher.find())
+		if(matcher.find()){
+			System.out.println("Matched : " + email);
 			return true;
+		}
+		
+		
+		System.out.println("Not Matched : "+ email);
 		return false;
 
 	}
