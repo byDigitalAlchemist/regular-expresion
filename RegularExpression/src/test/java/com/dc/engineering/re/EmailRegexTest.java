@@ -39,9 +39,9 @@ public class EmailRegexTest {
 	}
 	
 	@Test
-	public void currentTest(){
+	public void emailExtensionTest(){
 		EmailAddressRegex regex = new EmailAddressRegex();
-		assertTrue(regex.isValidEmailExtension(".c"));
+		assertFalse(regex.isValidEmailExtension(".c"));
 		assertTrue(regex.isValidEmailExtension(".co"));
 		assertTrue(regex.isValidEmailExtension(".com"));
 		assertFalse(regex.isValidEmailExtension(".comd"));
@@ -58,7 +58,46 @@ public class EmailRegexTest {
 		assertFalse(regex.isValidEmailExtension("c_m"));
 		assertFalse(regex.isValidEmailExtension("."));
 		assertFalse(regex.isValidEmailExtension(""));
-	
 	}
 	
+	
+	@Test
+	public void emailExtensionExtendedTest(){
+		/**
+		 * 
+		 	.com.uk
+			.co.in
+			.uk.edu.in
+		 */
+		EmailAddressRegex regex = new EmailAddressRegex();
+		//assertTrue(regex.isValidEmailExtension(".com.pk"));
+	}
+	
+	
+	@Test
+	public void currentTest(){
+		
+		EmailAddressRegex regex = new EmailAddressRegex();
+		assertTrue(regex.isValidEmailDomain("@gmail"));
+		assertFalse(regex.isValidEmailDomain("@"));
+		assertFalse(regex.isValidEmailDomain("gmail"));
+		assertFalse(regex.isValidEmailDomain(""));
+		assertFalse(regex.isValidEmailDomain("g"));
+		assertTrue(regex.isValidEmailDomain("@g"));
+		assertTrue(regex.isValidEmailDomain("@gms"));
+		assertTrue(regex.isValidEmailDomain("@gm-sss"));
+		assertTrue(regex.isValidEmailDomain("@xn--masekowski-d0b"));
+		assertTrue(regex.isValidEmailDomain("@stack"));
+		assertTrue(regex.isValidEmailDomain("@sta-ck"));
+		assertTrue(regex.isValidEmailDomain("@sta---ck"));
+		assertTrue(regex.isValidEmailDomain("@9sta--ck"));
+		assertTrue(regex.isValidEmailDomain("@sta--ck9"));
+		assertTrue(regex.isValidEmailDomain("@stack99"));
+		assertTrue(regex.isValidEmailDomain("@99stack"));
+		assertTrue(regex.isValidEmailDomain("@sta99ck"));
+	
+	}
+
+
+
 }
